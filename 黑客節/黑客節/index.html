@@ -14,7 +14,7 @@ html,body{height:100%}
 body{margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color:var(--text);
   background: var(--bg);
 }
-.app{max-width:420px; margin:0 auto; min-height:100vh; display:grid; grid-template-rows:auto 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border); padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 72px)}
+.app{max-width:420px; margin:0 auto; min-height:100vh; display:grid; grid-template-rows:auto 1fr; border-left:1px solid var(--border); border-right:1px solid var(--border); padding-bottom:calc(env(safe-area-inset-bottom, 0px) + 60px)}
 .header{position:sticky; top:0; z-index:10; backdrop-filter: blur(8px); background: rgba(0,0,0,.35); border-bottom:1px solid var(--border);}
 .header .bar{display:flex; align-items:center; justify-content:space-between; padding:10px 14px}
 .brand{display:flex; align-items:center; gap:8px}
@@ -39,11 +39,11 @@ hr.sep{border:none; border-top:1px solid var(--border); margin:8px 0}
 .video:focus{outline:2px solid var(--blue)}
 .subtle{opacity:.8}
 /* bottom nav */
-.nav{display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid var(--border); background:#000; position:fixed; left:50%; transform:translateX(-50%); bottom:0; width:100%; max-width:420px; height:56px}
-.tab{padding:8px 4px; text-align:center; font-size:11px; color:var(--muted); cursor:pointer}
+.nav{display:grid; grid-template-columns:repeat(7,1fr); border-top:1px solid var(--border); background:#000; position:fixed; left:50%; transform:translateX(-50%); bottom:0; width:100%; max-width:420px; height:44px}
+.tab{padding:8px 4px 4px 4px; text-align:center; font-size:11px; color:var(--muted); cursor:pointer; position:relative}
 .tab.active{color:#fff}
-.tab .dot{display:block; width:6px; height:6px; background:#ffffff88; border-radius:50%; margin:4px auto 0; opacity:0}
-.tab.active .dot{opacity:1}
+.tab.active::after{content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--accent)}
+.tab .dot{display:none}
 .hidden{display:none}
 /* timeline chart */
 #hrChart{width:100%; height:120px; display:block}
@@ -88,7 +88,7 @@ input[type="file"].hidden{display:none}
 <div class="app">
   <header class="header">
     <div class="bar">
-      <div class="brand"><div class="logo"><img src="logo.png" alt="Logo" style="width:100%;height:100%;object-fit:contain"></div></div>
+      <div class="brand"><div class="logo"><img src="logo1.jpg" alt="Logo" style="width:100%;height:100%;object-fit:contain"></div><div class="title">脈動</div></div>
       
     </div>
   </header>
